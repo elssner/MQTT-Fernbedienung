@@ -4,10 +4,10 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "pins": "github:calliope-net/pins#v1.2.1",
+        "pins": "github:calliope-net/pins#v1.2.2",
         "v3": "*",
         "serial": "github:calliope-net/serial#v0.1.0",
-        "lcd": "github:calliope-net/lcd#v0.1.2"
+        "lcd": "github:calliope-net/lcd#v0.1.5"
     },
     "files": [
         "main.blocks",
