@@ -1,3 +1,10 @@
+input.onGesture(Gesture.TiltRight, function () {
+    richtung = "_right"
+    mqtt_publish_bt("bt_right", 300)
+})
+input.onGesture(Gesture.LogoUp, function () {
+    mqtt_publish_bt("bt_bw" + richtung, 300)
+})
 function mqtt_publish_joystick () {
     pins.read_joystick()
     if (joystick_fahren == pins.get_x() && joystick_lenken == pins.get_y()) {
@@ -22,10 +29,14 @@ function mqtt_publish_joystick () {
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     lcd.write_array(serial.get_response(), lcd.eINC.inc1)
 })
+input.onGesture(Gesture.TiltLeft, function () {
+    richtung = "_left"
+    mqtt_publish_bt("bt_left", 300)
+})
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     basic.setLedColors(0x000000, 0x000000, 0x0000ff)
     i_payload = 0
-    while (true) {
+    while (mqtt_connected) {
         mqtt_publish_joystick()
         basic.pause(100)
     }
@@ -39,6 +50,14 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
+input.onGesture(Gesture.LogoDown, function () {
+    mqtt_publish_bt("bt_fw" + richtung, 300)
+})
+input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function () {
+    if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttconn), 5)) {
+        lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+    }
+})
 input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function () {
     basic.setLedColors(0x000000, 0x000000, 0xffffff)
     if (!(serial.mqtt_client("calliope"))) {
@@ -47,12 +66,31 @@ input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function
         basic.setLedColors(0x000000, 0x000000, 0x00ffff)
     } else {
         basic.setLedColors(0x000000, 0x000000, 0x00ff00)
+        mqtt_connected = true
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
+input.onGesture(Gesture.ScreenUp, function () {
+    richtung = ""
+    mqtt_publish_bt("bt_stop", 0)
+})
+function mqtt_publish_bt (button_id: string, speed: number) {
+    if (mqtt_connected && !(last_button_id == button_id)) {
+        i_payload += 1
+        if (serial.mqtt_publish("topic", "" + i_payload + ";" + button_id + ";" + speed)) {
+            last_button_id = button_id
+            lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+        } else {
+            basic.pause(200)
+        }
+    }
+}
+let last_button_id = ""
+let mqtt_connected = false
 let i_payload = 0
 let joystick_lenken = 0
 let joystick_fahren = 0
+let richtung = ""
 basic.setLedColors(0xffffff, 0x000000, 0x000000)
 serial.init_serial()
 basic.setLedColors(0xffffff, 0xffffff, 0x000000)
@@ -69,4 +107,7 @@ if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_rst), 5)) {
 } else {
     basic.setLedColors(0xff0000, 0x000000, 0x000000)
 }
-lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index(), 0)
+lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+basic.forever(function () {
+	
+})
