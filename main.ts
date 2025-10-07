@@ -1,9 +1,9 @@
 input.onGesture(Gesture.TiltRight, function () {
     richtung = "_right"
-    mqtt_publish_bt("bt_right", 300)
+    mqtt_publish_bt("bt_right", bt_speed)
 })
 input.onGesture(Gesture.LogoUp, function () {
-    mqtt_publish_bt("bt_bw" + richtung, 300)
+    mqtt_publish_bt("bt_bw" + richtung, bt_speed)
 })
 function mqtt_publish_joystick () {
     pins.read_joystick()
@@ -27,11 +27,15 @@ function mqtt_publish_joystick () {
     }
 }
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    lcd.write_array(serial.get_response(), lcd.eINC.inc1)
+    if (lcd.get_display(lcd.eDisplay.none)) {
+        bt_speed = 300
+    } else {
+        lcd.write_array(serial.get_response(), lcd.eINC.inc1)
+    }
 })
 input.onGesture(Gesture.TiltLeft, function () {
     richtung = "_left"
-    mqtt_publish_bt("bt_left", 300)
+    mqtt_publish_bt("bt_left", bt_speed)
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     basic.setLedColors(0x000000, 0x000000, 0x0000ff)
@@ -51,11 +55,15 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
 input.onGesture(Gesture.LogoDown, function () {
-    mqtt_publish_bt("bt_fw" + richtung, 300)
+    mqtt_publish_bt("bt_fw" + richtung, bt_speed)
 })
 input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function () {
-    if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttconn), 5)) {
-        lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+    if (lcd.get_display(lcd.eDisplay.none)) {
+        bt_speed = 512
+    } else {
+        if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttconn), 5)) {
+            lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+        }
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function () {
@@ -91,6 +99,7 @@ let i_payload = 0
 let joystick_lenken = 0
 let joystick_fahren = 0
 let richtung = ""
+let bt_speed = 0
 basic.setLedColors(0xffffff, 0x000000, 0x000000)
 serial.init_serial()
 basic.setLedColors(0xffffff, 0xffffff, 0x000000)
@@ -108,6 +117,4 @@ if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_rst), 5)) {
     basic.setLedColors(0xff0000, 0x000000, 0x000000)
 }
 lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
-basic.forever(function () {
-	
-})
+bt_speed = 400
