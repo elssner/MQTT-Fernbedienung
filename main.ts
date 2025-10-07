@@ -42,11 +42,13 @@ input.onGesture(Gesture.TiltLeft, function () {
     mqtt_publish_bt("bt_left", bt_speed)
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
-    basic.setLedColors(0x000000, 0x000000, 0x0000ff)
-    i_payload = 0
-    while (mqtt_connected) {
-        mqtt_publish_joystick()
-        basic.pause(100)
+    if (mqtt_connected) {
+        basic.setLedColors(0x000000, 0x000000, 0x0000ff)
+        i_payload = 0
+        while (mqtt_connected) {
+            mqtt_publish_joystick()
+            basic.pause(100)
+        }
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -57,7 +59,6 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         } else {
             basic.setLedColors(0x000000, 0xff0000, 0x000000)
         }
-        lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
     } else if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2)) {
         mqtt_connected = false
         basic.setLedColors(0x000000, 0x000000, 0xffff00)
@@ -65,6 +66,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         mqtt_connected = false
         basic.setLedColors(0x000000, 0x000000, 0xff0000)
     }
+    lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
 input.onGesture(Gesture.LogoDown, function () {
     mqtt_publish_bt("bt_fw" + richtung, bt_speed)
