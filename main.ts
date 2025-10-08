@@ -59,11 +59,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.b), 0xff0000, serial.wifi_connect("TXT4.0-sWp6", "ozvTwHC7"), 0x00FF00)
     } else {
         mqtt_connected = false
-        if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2)) {
-            basic.setLedColors(0x000000, 0x000000, 0xffff00)
-        } else {
-            basic.setLedColors(0x000000, 0x000000, 0xff0000)
-        }
+        basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000, serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2), 0xffff00)
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
@@ -81,15 +77,17 @@ input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function () {
-    basic.setLedColors(0x000000, 0x000000, 0xffffff)
+    basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xffffff)
     if (!(serial.mqtt_client("calliope"))) {
-        basic.setLedColors(0x000000, 0x000000, 0xff0000)
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000)
     } else if (!(serial.mqtt_connect("192.168.8.2", 1884))) {
-        basic.setLedColors(0x000000, 0x000000, 0x00ffff)
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0x00ffff)
     } else {
-        basic.setLedColors(0x000000, 0x000000, 0x00ff00)
         i_payload = 0
         mqtt_connected = true
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, gesten)
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0x0000ff, pins.joystick_connected())
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0x00ff00, mqtt_connected)
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
