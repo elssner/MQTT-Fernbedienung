@@ -19,7 +19,7 @@ function mqtt_publish_joystick () {
         pins.comment(pins.pins_text("wenn nichts geändert, kein Publish"))
     } else {
         i_payload += 1
-        if (serial.mqtt_publish("topic", "" + i_payload + ";j;" + pins.get_x() + ";" + pins.get_y())) {
+        if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, "j", pins.get_x(), pins.get_y()))) {
             pins.comment(pins.pins_text("wenn Publish erfolgreich, x y Werte speichern"))
             joystick_fahren = pins.get_x()
             joystick_lenken = pins.get_y()
@@ -101,7 +101,7 @@ input.onGesture(Gesture.ScreenUp, function () {
 })
 function mqtt_publish_relay (on: string) {
     i_payload += 1
-    if (serial.mqtt_publish("topic", "" + i_payload + ";" + on)) {
+    if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, on))) {
         last_joystick_button = on
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
@@ -109,7 +109,7 @@ function mqtt_publish_relay (on: string) {
 function mqtt_publish_bt (button_id: string, speed: number) {
     if (mqtt_connected && !(last_button_id == button_id)) {
         i_payload += 1
-        if (serial.mqtt_publish("topic", "" + i_payload + ";" + button_id + ";" + speed)) {
+        if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, button_id, speed))) {
             last_button_id = button_id
             lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
         } else {
