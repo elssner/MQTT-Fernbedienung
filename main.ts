@@ -35,7 +35,15 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
         lcd.write_array(serial.get_response(), lcd.eINC.inc1)
     } else if (mqtt_connected) {
         gesten = !(gesten)
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, gesten)
+        if (gesten && bt_speed == 512) {
+            bt_speed = 384
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x7f00ff)
+        } else if (gesten) {
+            bt_speed = 512
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff)
+        } else {
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x000000)
+        }
     }
 })
 input.onGesture(Gesture.TiltLeft, function () {
@@ -74,6 +82,10 @@ input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff8000)
     } else {
         i_payload = 0
+        joystick_fahren = 128
+        joystick_lenken = 128
+        last_joystick_button = "0"
+        bt_speed = 512
         mqtt_connected = true
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, gesten)
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0x0000ff, pins.joystick_connected())
@@ -98,10 +110,10 @@ function mqtt_publish_bt (button_id: string, speed: number) {
     if (gesten && mqtt_connected && last_button_id != button_id) {
         i_payload += 1
         if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, button_id, speed))) {
-            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, true, speed > 0)
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, button_id == "bt_stop")
             last_button_id = button_id
         } else {
-            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000, true)
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000)
             basic.pause(200)
         }
         lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
@@ -114,8 +126,8 @@ let i_payload = 0
 let joystick_lenken = 0
 let joystick_fahren = 0
 let last_joystick_button = ""
-let richtung = ""
 let bt_speed = 0
+let richtung = ""
 basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffffff)
 serial.init_serial()
 basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffff00)
@@ -127,7 +139,6 @@ if (lcd.get_display(lcd.eDisplay.none)) {
 }
 basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000, serial.at_command(serial.serial_eAT(serial.eAT_commands.at_rst), 5), 0x00FF00)
 lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
-bt_speed = 400
 basic.forever(function () {
     if (mqtt_connected && pins.joystick_connected()) {
         mqtt_publish_joystick()
