@@ -1,5 +1,5 @@
 
-> Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.github.io/MQTT-Fernbedienung/) öffnen
+> Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/doc/](https://elssner.github.io/MQTT-Fernbedienung/doc/) öffnen
 
 ## [Grove WiFi 8266 - IoT for micro:bit and beyond](https://www.cytron.io/p-grove-wifi-8266-iot-for-microbit-and-beyond)
 
