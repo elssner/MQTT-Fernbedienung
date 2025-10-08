@@ -3,7 +3,7 @@
 
 ## [Grove WiFi 8266 - IoT for micro:bit and beyond](https://www.cytron.io/p-grove-wifi-8266-iot-for-microbit-and-beyond)
 
-![](doc/GRV-WIFI-8266_Layout.jpg)
+![](GRV-WIFI-8266_Layout.jpg)
 
 ### Features
 
