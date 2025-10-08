@@ -42,15 +42,6 @@ input.onGesture(Gesture.TiltLeft, function () {
     richtung = "_left"
     mqtt_publish_bt("bt_left", bt_speed)
 })
-input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
-    if (mqtt_connected) {
-        basic.setLedColors(0x000000, 0x000000, 0x0000ff)
-        i_payload = 0
-        while (mqtt_connected) {
-        	
-        }
-    }
-})
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     if (!(mqtt_connected)) {
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0xffffff)
@@ -71,9 +62,8 @@ input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function
         if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttconn), 5)) {
             lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
         }
-    } else if (mqtt_connected) {
-        bt_speed = 512
-        basic.setLedColors(0x000000, 0x0000ff, 0x000000)
+    } else {
+        basic.showString("" + (serial.get_response()[serial.get_response_index()]))
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function () {
