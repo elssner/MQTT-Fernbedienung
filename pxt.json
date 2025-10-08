@@ -8,7 +8,7 @@
         "v3": "*",
         "serial": "github:calliope-net/serial#v0.2.4",
         "lcd": "github:calliope-net/lcd#v0.1.5",
-        "basicv3": "github:calliope-net/basicv3#v0.0.1"
+        "basicv3": "github:calliope-net/basicv3#v0.0.2"
     },
     "files": [
         "main.blocks",
