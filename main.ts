@@ -55,12 +55,8 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     if (!(mqtt_connected)) {
-        basic.setLedColors(0x000000, 0xffffff, 0x000000)
-        if (serial.wifi_connect("TXT4.0-sWp6", "ozvTwHC7")) {
-            basic.setLedColors(0x000000, 0x00ff00, 0x000000)
-        } else {
-            basic.setLedColors(0x000000, 0xff0000, 0x000000)
-        }
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0xffffff)
+        basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.b), 0xff0000, serial.wifi_connect("TXT4.0-sWp6", "ozvTwHC7"), 0x00FF00)
     } else {
         mqtt_connected = false
         if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2)) {
@@ -130,22 +126,16 @@ let joystick_fahren = 0
 let last_joystick_button = ""
 let richtung = ""
 let bt_speed = 0
-basic.setLedColors(0xffffff, 0x000000, 0x000000)
+basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffffff)
 serial.init_serial()
-basic.setLedColors(0xffffff, 0xffffff, 0x000000)
+basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffff00)
 basic.pause(2000)
 lcd.init_display(lcd.eDisplay.qwiic_20_4, true)
 if (lcd.get_display(lcd.eDisplay.none)) {
-    basic.setLedColors(0xffffff, 0xffffff, 0xff0000)
+    basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0xffff00)
     basic.pause(2000)
-} else {
-    basic.setLedColors(0xffffff, 0xffffff, 0xffffff)
 }
-if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_rst), 5)) {
-    basic.setLedColors(0x00ff00, 0x000000, 0x000000)
-} else {
-    basic.setLedColors(0xff0000, 0x000000, 0x000000)
-}
+basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000, serial.at_command(serial.serial_eAT(serial.eAT_commands.at_rst), 5), 0x00FF00)
 lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 bt_speed = 400
 basic.forever(function () {
