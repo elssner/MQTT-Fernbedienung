@@ -25,26 +25,26 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b orange`.
 
 ### Kopf B geklickt
-* wenn MQTT nicht verbunden
-  * <ins>b weiß</ins> wenn Kopf B geklickt
+* MQTT verbinden
+  * `b weiß` wenn Kopf B geklickt
   * WLAN verbinden (SSID und Password)
-  * <ins>b grün</ins> bei Erfolg <ins>b rot</ins> bei Fehler
-* wenn MQTT verbunden
-  * <ins>a aus</ins> <ins>b aus</ins>
-  * MQTT trennen
-  * <ins>c gelb</ins> bei Erfolg <ins>c rot</ins> bei Fehler
+  * `b grün` bei Erfolg `b rot` bei Fehler
+* MQTT trennen (wenn verbunden)
+  * `a aus` und  `b aus`
+  * <ins>MQTT trennen</ins>
+  * `c gelb` bei Erfolg `c rot` bei Fehler
 * Anzeige der AT Response auf LCD Display
 
 Jetzt sollte beim Verbinden `a grün` und `b grün` leuchten.
 Nach dem Trennen nur `c gelb`.
 
 ### Kopf B halten
-* <ins>c weiß</ins> Kopf B erkannt, loslassen
-* MQTT Client (ID, Username, Password)
-* <ins>c rot</ins> bei Fehler
+* `c weiß` Kopf B erkannt, loslassen
+* MQTT Client vorbereiten (ID, Username, Password)
+* `>c rot` bei Fehler
   * bei Erfolg
   * MQTT Client verbinden (IP Adresse, Port)
-  * `c grün`bei Erfolg `c orange` bei Fehler
+  * `c grün`bei Erfolg, `c orange` bei Fehler
   * <ins>MQTT ist verbunden</ins>
   * `a blau` wenn Gesten aktiviert
   * `b blau` wenn Joystick angeschlossen
