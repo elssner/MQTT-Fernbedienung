@@ -62,7 +62,7 @@ Nach dem Trennen nur `c gelb`.
 
 ### Kopf A geklickt
 * wenn Display angeschlossen
-  * die letzten 10 Response Strings im Display anzeigen
+  * die letzten 10 Response Strings im LCD Display anzeigen
   * mit jedem Klick auf A wird weiter geschaltet (nur vorwärts)
 * wenn kein Display angeschlossen und <ins>MQTT verbunden</ins>
   * Gesten abwechselnd an und aus schalten
