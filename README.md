@@ -56,7 +56,7 @@ Nach dem Trennen nur `c gelb`.
 `b blinkt blau`, wenn die Daten vom Joystick gesendet werden.\
 `a blau`, wenn die Gesten gesendet werden (muss noch aktiviert werden).
 
-> Gesten funktionieren nur, wenn kein Display angschlossen ist.
+> Gesten funktionieren nur, wenn kein LCD Display angeschlossen ist.
 
 ### Kopf A geklickt
 * wenn Display angeschlossen
@@ -67,7 +67,21 @@ Nach dem Trennen nur `c gelb`.
   * `a lila` Geschwindigkeit beim Neigen langsamer
   * `a blau` Geschwindigkeit beim Neigen max (512)
 
+### Kopf A geklickt
+* wenn Display angeschlossen
+  * AT+MQTTCONN? MQTT Status abrufen und anzeigen
+* wenn kein Display angeschlossen
+  * den letzten Response String im Calliope Display anzeigen
 
+### Kopf A+B geklickt
+* zur Zeit nicht verwendet
+
+### wenn Logo nach unten
+### wenn Logo nach oben
+### wenn nach links neigen
+### wenn nach rechts neigen
+### wenn Display nach unten
+### wenn Display nach oben
 
 
 ↶| |↷
