@@ -18,7 +18,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * <ins>a gelb</ins> 2 Sekunden warten auf Stromversorgung
 * LCD Display erkennen und initialisieren
 * <ins>b orange</ins> wenn kein Display erkannt
-* 
+* AT+RST (Reset WLAN Modul)
+* <ins>a grün</ins> bei Erfolg <ins>a rot bei Fehler</ins>
 
 
 
