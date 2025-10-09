@@ -76,19 +76,24 @@ input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function
 })
 input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function () {
     basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xffffff)
-    if (!(serial.mqtt_client("calliope"))) {
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000)
-    } else if (!(serial.mqtt_connect("192.168.8.2", 1884))) {
+    mqtt_connected = false
+    if (serial.mqtt_client("calliope")) {
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff8000)
+        lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+        if (serial.mqtt_connect("192.168.8.2", 1884)) {
+            i_payload = 0
+            joystick_fahren = 128
+            joystick_lenken = 128
+            last_joystick_button = "0"
+            mqtt_connected = true
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, gesten)
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0x0000ff, pins.joystick_connected())
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0x00ff00)
+        } else {
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000)
+        }
     } else {
-        i_payload = 0
-        joystick_fahren = 128
-        joystick_lenken = 128
-        last_joystick_button = "0"
-        mqtt_connected = true
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, gesten)
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0x0000ff, pins.joystick_connected())
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0x00ff00, mqtt_connected)
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xffff00)
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
@@ -129,7 +134,7 @@ let bt_speed = 0
 let richtung = ""
 basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffffff)
 serial.init_serial()
-basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffff00)
+basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff8000)
 basic.pause(2000)
 lcd.init_display(lcd.eDisplay.qwiic_20_4, true)
 if (lcd.get_display(lcd.eDisplay.none)) {
