@@ -14,7 +14,10 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 
 ### beim Start
-* <ins>weiß</ins> serielle Schnittstelle wird initialisiert
+* <ins>a weiß</ins> serielle Schnittstelle wird initialisiert
+* <ins>a gelb</ins> 2 Sekunden warten auf Stromversorgung
+* LCD Display erkennen und initialisieren
+* <ins>b orange</ins> wenn kein Display erkannt
 * 
 
 
