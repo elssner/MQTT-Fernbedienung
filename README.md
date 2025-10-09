@@ -96,4 +96,4 @@ Nach dem Trennen nur `c gelb`.
 Modell fährt in die entsprechende Richtung. Die Tabelle zeigt alle möglichen Richtungen (8 gerade, 2 auf der Stelle drehen und Stop).
 Dabei werden teilweise zwei aufeinander folgende Gesten ausgewertet (erst links/rechts neigen, dann vor/zurück oder nach unten drehen).
 
-
+![](doc/DSC00693_1920.JPG)
