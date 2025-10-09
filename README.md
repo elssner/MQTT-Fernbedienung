@@ -1,6 +1,23 @@
 
 > Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.github.io/MQTT-Fernbedienung/) öffnen
 
+↶| |↷
+---|---|---
+↖|↑|↗
+←|↯|→
+↙|↓|↘
+
+hex|bit|Funktion|bei Ereignis von einem Sensor
+---|---|---|---
+0x00|<code>..00....</code>|Fernsteuerung 6 Motoren|Stop bei Hindernis
+0x10|<code>..01....</code>|Fernsteuerung ein Motor M0|wechselt zum *Programm Sensoren*
+0x20|<code>..10....</code>|Programm 5 Strecken|Stop bei Hindernis
+0x30|<code>..11....</code>|Programm Sensoren|wechselt zum Ereignis-Block
+
+
+
+
+
 ## [Grove WiFi 8266 - IoT for micro:bit and beyond](https://www.cytron.io/p-grove-wifi-8266-iot-for-microbit-and-beyond)
 
 ![](doc/GRV-WIFI-8266_Layout.jpg)
