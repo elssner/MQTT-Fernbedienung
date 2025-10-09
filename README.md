@@ -3,6 +3,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 ## Calliope WLAN Fernbedienung (MQTT / IoT)
 
+![](doc/DSC00693_Fernbedienung_512.JPG)
+
 * WLAN Modul: [Cytron: Grove WiFi 8266 - IoT for micro:bit and beyond](doc/)
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
 
