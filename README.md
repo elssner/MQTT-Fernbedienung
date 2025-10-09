@@ -7,24 +7,24 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
 
 #### LED Farben
-* **weiß** am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
-* **grün** bei OK nach einem AT-Kommando
-* **rot** bei Fehler nach einem AT-Kommando
-* **blau** Verbindung ist aktiv
+* `weiß` am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
+* `grün` bei OK nach einem AT-Kommando
+* `rot` bei Fehler nach einem AT-Kommando
+* `blau` Verbindung ist aktiv
 
 
-### beim Start
-* <ins>a weiß</ins> serielle Schnittstelle wird initialisiert
-* <ins>a gelb</ins> 2 Sekunden warten auf Stromversorgung
+### `a` beim Start
+* `a weiß` serielle Schnittstelle wird initialisiert
+* `a gelb` 2 Sekunden warten auf Stromversorgung
 * LCD Display erkennen und initialisieren
-* <ins>b orange</ins> wenn kein Display erkannt
+* `b orange` wenn kein Display erkannt
 * AT+RST (Reset WLAN Modul)
-* <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
+* `a grün` bei Erfolg `a rot` bei Fehler
 * Anzeige der AT Response auf LCD Display
 
 Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b orange`.
 
-### Kopf B geklickt
+### `b` Kopf B geklickt
 * MQTT verbinden
   * `b weiß` wenn Kopf B geklickt
   * WLAN verbinden (SSID und Password)
@@ -38,10 +38,10 @@ Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b o
 Jetzt sollte beim Verbinden `a grün` und `b grün` leuchten.
 Nach dem Trennen nur `c gelb`.
 
-### Kopf B halten
+### `c` Kopf B halten
 * `c weiß` Kopf B erkannt, loslassen
 * MQTT Client vorbereiten (ID, Username, Password)
-* `>c rot` bei Fehler
+* `c rot` bei Fehler
   * bei Erfolg
   * MQTT Client verbinden (IP Adresse, Port)
   * `c grün`bei Erfolg, `c orange` bei Fehler
