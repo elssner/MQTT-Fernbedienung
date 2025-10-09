@@ -22,6 +22,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
 * Anzeige der AT Response auf LCD Display
 
+Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b orange`.
+
 ### Kopf B geklickt
 * wenn MQTT nicht verbunden
   * <ins>b weiß</ins> wenn Kopf B geklickt
@@ -39,7 +41,12 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * <ins>c rot</ins> bei Fehler
   * bei Erfolg
   * MQTT Client verbinden (IP Adresse, Port)
-  * `c orange` bei Fehler
+  * `c grün`bei Erfolg `c orange` bei Fehler
+  * <ins>MQTT ist verbunden</ins>
+  * `a blau` wenn Gesten aktiviert
+  * `b blau` wenn Joystick angeschlossen
+* Anzeige der AT Response auf LCD Display
+
 
 
 ↶| |↷
