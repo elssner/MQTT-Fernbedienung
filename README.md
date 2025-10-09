@@ -10,7 +10,9 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * `weiß` am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
 * `grün` bei OK nach einem AT-Kommando
 * `rot` bei Fehler nach einem AT-Kommando
+* `orange` Warnung
 * `blau` Verbindung ist aktiv
+* `gelb` Verbindung getrennt (mit Knopf B)
 
 
 ### `a` beim Start
