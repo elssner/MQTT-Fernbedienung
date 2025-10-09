@@ -22,7 +22,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
 * Anzeige der AT Response auf LCD Display
 
-### wenn Kopf B geklickt
+### Kopf B geklickt
 * wenn MQTT nicht verbunden
   * <ins>b weiß</ins> wenn Kopf B geklickt
   * WLAN verbinden (SSID und Password)
@@ -32,6 +32,14 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
   * MQTT trennen
   * <ins>c gelb</ins> bei Erfolg <ins>c rot</ins> bei Fehler
 * Anzeige der AT Response auf LCD Display
+
+### Kopf B halten
+* <ins>c weiß</ins> Kopf B erkannt, loslassen
+* MQTT Client (ID, Username, Password)
+* <ins>c rot</ins> bei Fehler
+  * bei Erfolg
+  * MQTT Client verbinden (IP Adresse, Port)
+  * <ins>c orange</ins> bei Fehler
 
 
 ↶| |↷
