@@ -19,8 +19,19 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * LCD Display erkennen und initialisieren
 * <ins>b orange</ins> wenn kein Display erkannt
 * AT+RST (Reset WLAN Modul)
-* <ins>a grün</ins> bei Erfolg <ins>a rot bei Fehler</ins>
+* <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
+* Anzeige der AT Response auf LCD Display
 
+### wenn Kopf B geklickt
+* wenn MQTT nicht verbunden
+  * <ins>b weiß</ins> wenn Kopf B geklickt
+  * WLAN verbinden (SSID und Password)
+  * <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
+* wenn MQTT verbunden
+  * <ins>a aus</ins> <ins>b aus</ins>
+  * MQTT trennen
+  * <ins>a grün</ins> bei Erfolg <ins>a rot</ins> bei Fehler
+* Anzeige der AT Response auf LCD Display
 
 
 ↶| |↷
