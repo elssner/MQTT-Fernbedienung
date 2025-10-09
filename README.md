@@ -35,6 +35,9 @@ Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b o
   * <ins>c gelb</ins> bei Erfolg <ins>c rot</ins> bei Fehler
 * Anzeige der AT Response auf LCD Display
 
+Jetzt sollte beim Verbinden `a grün` und `b grün` leuchten.
+Nach dem Trennen nur `c gelb`.
+
 ### Kopf B halten
 * <ins>c weiß</ins> Kopf B erkannt, loslassen
 * MQTT Client (ID, Username, Password)
