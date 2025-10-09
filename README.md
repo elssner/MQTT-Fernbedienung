@@ -46,11 +46,27 @@ Nach dem Trennen nur `c gelb`.
 * `c rot` bei Fehler
   * bei Erfolg
   * MQTT Client verbinden (IP Adresse, Port)
-  * `c grün`bei Erfolg, `c orange` bei Fehler
+  * `c grün` bei Erfolg, `c orange` bei Fehler
   * <ins>MQTT ist verbunden</ins>
   * `a blau` wenn Gesten aktiviert
   * `b blau` wenn Joystick angeschlossen
 * Anzeige der AT Response auf LCD Display
+
+`c grün` zeigt an, dass MQTT verbunden und die Fernbedienung bereit ist.\
+`b blinkt blau`, wenn die Daten vom Joystick gesendet werden.\
+`a blau`, wenn die Gesten gesendet werden (muss noch aktiviert werden).
+
+> Gesten funktionieren nur, wenn kein Display angschlossen ist.
+
+### Kopf A geklickt
+* wenn Display angeschlossen
+  * die letzten 10 Response Strings im Display anzeigen
+  * mit jedem Klick auf A wird weiter geschaltet
+* wenn <ins>MQTT verbunden</ins> (und kein Display)
+  * Gesten abwechselnd an und aus `a aus` schalten
+  * `a lila` Geschwindigkeit langsamer
+  * `a blau` Geschwindigkeit max (512)
+
 
 
 
