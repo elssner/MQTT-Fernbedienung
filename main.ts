@@ -1,5 +1,6 @@
 input.onGesture(Gesture.TiltRight, function () {
     richtung = "_right"
+    basic.pause(1000)
     mqtt_publish_bt("bt_right", bt_speed)
 })
 input.onGesture(Gesture.LogoUp, function () {
@@ -25,6 +26,7 @@ function mqtt_publish_joystick () {
             joystick_lenken = pins.get_y()
         } else {
             pins.comment(pins.pins_text("wenn Publish false, nach Pause noch mal versuchen"))
+            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0xff0000)
             basic.pause(200)
         }
         lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
@@ -48,6 +50,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 input.onGesture(Gesture.TiltLeft, function () {
     richtung = "_left"
+    basic.pause(1000)
     mqtt_publish_bt("bt_left", bt_speed)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -106,6 +109,7 @@ function mqtt_publish_relay (on: string) {
     if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, on))) {
         last_joystick_button = on
     } else {
+        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), 0xff0000)
         basic.pause(200)
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
@@ -114,7 +118,7 @@ function mqtt_publish_bt (button_id: string, speed: number) {
     if (mqtt_connected && gesten && last_button_id != button_id) {
         i_payload += 1
         if (serial.mqtt_publish("topic", serial.string_join(";", i_payload, button_id, speed))) {
-            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x0000ff, button_id == "bt_stop")
+            basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff00ff, button_id == "bt_stop", 0x0000ff)
             last_button_id = button_id
         } else {
             basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000)
