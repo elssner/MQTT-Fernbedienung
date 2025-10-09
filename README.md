@@ -5,9 +5,10 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 ![](doc/DSC00693_Fernbedienung_512.JPG)
 
-* WLAN Modul: [Cytron: Grove WiFi 8266 - IoT for micro:bit and beyond](doc/)
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
-* Joystick und LCD Display (Qwiic oder Grove) sind optional.
+* WLAN Modul: [Cytron: Grove WiFi 8266 - IoT for micro:bit and beyond](doc/)
+* Andere 8266 oder 8285 Module sind nicht geeignet.
+* I²C Qwiic Joystick und LCD Display (Qwiic oder Grove) sind optional.
 
 #### LED Farben
 * `weiß` am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
