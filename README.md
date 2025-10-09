@@ -39,7 +39,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * <ins>c rot</ins> bei Fehler
   * bei Erfolg
   * MQTT Client verbinden (IP Adresse, Port)
-  * <ins>c orange</ins> bei Fehler
+  * `c orange` bei Fehler
 
 
 ↶| |↷
