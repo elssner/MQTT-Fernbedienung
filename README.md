@@ -7,10 +7,10 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
 
 #### LED Farben
-* weiß am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
-* grün bei OK nach einem AT-Kommando
-* rot bei Fehler nach einem AT-Kommando
-* blau Verbindung ist aktiv
+* **weiß** am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
+* **grün** bei OK nach einem AT-Kommando
+* **rot** bei Fehler nach einem AT-Kommando
+* **blau** Verbindung ist aktiv
 
 
 ### beim Start
