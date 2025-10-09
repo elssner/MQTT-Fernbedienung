@@ -1,6 +1,5 @@
 input.onGesture(Gesture.TiltRight, function () {
     richtung = "_right"
-    basic.pause(1000)
     mqtt_publish_bt("bt_right", bt_speed)
 })
 input.onGesture(Gesture.LogoUp, function () {
@@ -50,7 +49,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 input.onGesture(Gesture.TiltLeft, function () {
     richtung = "_left"
-    basic.pause(1000)
     mqtt_publish_bt("bt_left", bt_speed)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -96,7 +94,7 @@ input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function
             basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000)
         }
     } else {
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.c), 0xffff00)
+        basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000, serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2), 0xffff00)
     }
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
