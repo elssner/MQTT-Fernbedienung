@@ -67,7 +67,7 @@ Nach dem Trennen nur `c gelb`.
   * `a lila` Geschwindigkeit beim Neigen langsamer
   * `a blau` Geschwindigkeit beim Neigen max (512)
 
-### Kopf A geklickt
+### Kopf A halten
 * wenn Display angeschlossen
   * AT+MQTTCONN? MQTT Status abrufen und anzeigen
 * wenn kein Display angeschlossen
@@ -76,19 +76,25 @@ Nach dem Trennen nur `c gelb`.
 ### Kopf A+B geklickt
 * zur Zeit nicht verwendet
 
-### wenn Logo nach unten
-### wenn Logo nach oben
-### wenn nach links neigen
-### wenn nach rechts neigen
-### wenn Display nach unten
-### wenn Display nach oben
+### Gesten (Calliope neigen, kippen, drehen)
 
+* wenn Logo nach unten
+* wenn Logo nach oben
+* wenn nach links neigen
+* wenn nach rechts neigen
+* wenn Display nach unten
+* wenn Display nach oben
 
 ↶| |↷
 ---|---|---
 ↖|↑|↗
 ←|↯|→
 ↙|↓|↘
+
+Modell fährt in die entsprechende Richtung. Die Tabelle zeigt alle möglichen Richtungen (8 gerade, 2 drehen und Stop).
+Dabei werden teilweise zwei aufeinander folgende Gesten ausgewertet (erst links/rechts neigen, dann vor/zurück drehen oder nach unten drehen).
+
+
 
 hex|bit|Funktion|bei Ereignis von einem Sensor
 ---|---|---|---
