@@ -79,8 +79,13 @@ Nach dem Trennen nur `c gelb`.
 ### Kopf A+B geklickt
 * zur Zeit nicht verwendet
 
-### Gesten (Calliope neigen, kippen, drehen)
+### Joystick
+* Fahren und Lenken nach dem Prinzip Raupensteuerung.
+* Die linken Räder und die rechten Räder sind jeweils synchronisiert.
+* Joystick nach rechts oder links: Drehen auf der Stelle.
+* Joystick Button schaltet das I²C Relais und das Licht am Modell.
 
+### Gesten (Calliope neigen, kippen, drehen)
 * wenn Logo nach unten
 * wenn Logo nach oben
 * wenn nach links neigen
