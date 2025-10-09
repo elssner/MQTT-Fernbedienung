@@ -64,7 +64,7 @@ Nach dem Trennen nur `c gelb`.
 * wenn Display angeschlossen
   * die letzten 10 Response Strings im Display anzeigen
   * mit jedem Klick auf A wird weiter geschaltet (nur vorwärts)
-* wenn Display angeschlossen und <ins>MQTT verbunden</ins>
+* wenn kein Display angeschlossen und <ins>MQTT verbunden</ins>
   * Gesten abwechselnd an und aus schalten
   * `a lila` Geschwindigkeit beim Neigen langsamer
   * `a blau` Geschwindigkeit beim Neigen max (512)
