@@ -14,7 +14,10 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 
 ### beim Start
+* <ins>weiß</ins> serielle Schnittstelle wird initialisiert
 * 
+
+
 
 ↶| |↷
 ---|---|---
