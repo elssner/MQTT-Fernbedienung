@@ -29,11 +29,11 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b orange`.
 
 ### `b` Kopf B geklickt
-* MQTT verbinden
+* WLAN verbinden <ins>wenn MQTT nicht verbunden</ins>
   * `b weiß` wenn Kopf B geklickt
   * WLAN verbinden (SSID und Password)
   * `b grün` bei Erfolg `b rot` bei Fehler
-* MQTT trennen (wenn verbunden)
+* MQTT trennen <ins>wenn MQTT verbunden</ins>
   * `a aus` und  `b aus`
   * <ins>MQTT trennen</ins>
   * `c gelb` bei Erfolg `c rot` bei Fehler
