@@ -59,13 +59,14 @@ Nach dem Trennen nur `c gelb`.
 ### `c` Kopf B halten
 * `c weiß` Kopf B erkannt, loslassen
 * MQTT Client vorbereiten (ID, Username, Password)
-* `c rot` bei Fehler
-  * bei Erfolg
-  * MQTT Client verbinden (IP Adresse, Port)
-  * `c grün` bei Erfolg, `c orange` bei Fehler
-  * <ins>MQTT ist verbunden</ins>
-  * `a blau` wenn Gesten aktiviert
-  * `b blau` wenn Joystick angeschlossen
+  * bei Fehler: <ins>MQTT trennen</ins>
+  * `c gelb` bei Erfolg `c rot` bei Fehler
+* `c orange` bei Erfolg
+* Anzeige der AT Response auf LCD Display
+* MQTT Client verbinden (IP Adresse, Port)
+  * `c grün` <ins>MQTT ist verbunden</ins> `c orange` bei Fehler
+    * `a blau` wenn Gesten aktiviert
+    * `b blau` wenn Joystick angeschlossen
 * Anzeige der AT Response auf LCD Display
 
 `c grün` zeigt an, dass MQTT verbunden und die Fernbedienung bereit ist.\
