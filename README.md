@@ -31,7 +31,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 ### `a` beim Start
 * `a weiß` serielle Schnittstelle wird initialisiert
-* `a gelb` 2 Sekunden warten auf Stromversorgung
+* `a orange` 2 Sekunden warten auf Stromversorgung
 * LCD Display erkennen und initialisieren
 * `b orange` wenn kein Display erkannt
 * AT+RST (Reset WLAN Modul)
