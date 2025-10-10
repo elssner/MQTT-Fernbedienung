@@ -60,7 +60,7 @@ Nach dem Trennen nur `c gelb`.
 * `c weiß` Kopf B erkannt, loslassen
 * MQTT Client vorbereiten (ID, Username, Password)
   * <ins>MQTT trennen</ins> bei Fehler
-    * `c gelb` bei Erfolg `c rot` bei Fehler
+  * `c gelb` bei Erfolg `c rot` bei Fehler
 * `c orange` bei Erfolg
 * Anzeige der AT Response auf LCD Display
 * MQTT Client verbinden (IP Adresse, Port)
