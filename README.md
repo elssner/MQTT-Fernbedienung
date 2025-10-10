@@ -3,8 +3,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 ## Calliope WLAN Fernbedienung (MQTT / IoT)
 
-![](doc/DSC00693_Fernbedienung_512.JPG) [![](doc/MQTT-Fernbedienung-0-2-0_512.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
-Zum Vergrößern auf das Bild klicken.
+![](doc/DSC00693_Fernbedienung_512.JPG)
 
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
 * WLAN Modul: [Cytron: Grove WiFi 8266 - IoT for micro:bit and beyond](doc/)
@@ -110,8 +109,5 @@ Dabei werden teilweise zwei aufeinander folgende Gesten ausgewertet (erst links/
 
 ![](doc/DSC00693_1920.JPG)
 
-
-[![](doc/MQTT-Fernbedienung-0-2-0_400.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
+[![](doc/MQTT-Fernbedienung-0-2-0_512.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
 Zum Vergrößern auf das Bild klicken.
-
-![](doc/MQTT-Fernbedienung-0-2-0.png)
