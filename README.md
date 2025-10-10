@@ -46,7 +46,9 @@ Jetzt sollte `a grün` leuchten und - wenn kein Display angeschlossen ist - `b o
   * WLAN verbinden (SSID und Password)
   * `b grün` bei Erfolg `b rot` bei Fehler
 * MQTT trennen <ins>wenn MQTT verbunden</ins>
-  * `a aus` und  `b aus`
+  * MQTT Publish: STOP zum Modell senden
+  * `a aus` bei Erfolg `a rot` bei Fehler
+  * `b aus`
   * <ins>MQTT trennen</ins>
   * `c gelb` bei Erfolg `c rot` bei Fehler
 * Anzeige der AT Response auf LCD Display
@@ -78,9 +80,12 @@ Nach dem Trennen nur `c gelb`.
   * mit jedem Klick auf A wird weiter geschaltet (nur vorwärts)
 * wenn kein Display angeschlossen und <ins>MQTT verbunden</ins>
   * Gesten abwechselnd an und aus schalten
-  * `a lila` Geschwindigkeit beim Neigen langsamer
-  * `a blau` Geschwindigkeit beim Neigen max (512)
-  * `a aus` Gesten aus geschaltet
+  * Gesten an
+    * `a lila` Geschwindigkeit beim Neigen langsamer
+    * `a blau` Geschwindigkeit beim Neigen max (512)
+  * Gesten aus
+    * MQTT Publish: STOP zum Modell senden
+    * `a aus` bei Erfolg `a rot` bei Fehler
 
 ### Kopf A halten
 * wenn Display angeschlossen
