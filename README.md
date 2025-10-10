@@ -3,7 +3,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 
 ## Calliope WLAN Fernbedienung (MQTT / IoT)
 
-![](doc/DSC00693_Fernbedienung_512.JPG) [![](doc/MQTT-Fernbedienung-0-2-0_400.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
+![](doc/DSC00693_Fernbedienung_512.JPG) [![](doc/MQTT-Fernbedienung-0-2-0_512.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
 Zum Vergrößern auf das Bild klicken.
 
 * Calliope v3 Projekt laden: [elssner/MQTT-Fernbedienung](https://elssner.github.io/MQTT-Fernbedienung/)
