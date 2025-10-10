@@ -10,21 +10,21 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
 * Andere 8266 oder 8285 Module sind nicht geeignet.
 * I²C Qwiic Joystick und LCD Display (Qwiic oder Grove) sind optional.
 
-#### LED Status
+#### LED Status `a` `b` `c`
 * beim Verbinden
   * `a` serielle Schnittstelle
   * `b` WLAN Verbindung
   * `c` MQTT Verbindung
 * beim Fernsteuern
   * `a` Gesten (Calliope neigen, kippen, drehen)
-  * `b` Jostick
+  * `b` Joystick
   * `c` MQTT Verbindung
 
 #### LED Farben
 * `weiß` am Anfang eines Ereignisses (zeigt, dass Taste gedrückt wurde)
 * `grün` bei OK nach einem AT-Kommando
 * `rot` bei Fehler nach einem AT-Kommando
-* `orange` Warnung
+* `orange` Warnung, warten
 * `blau` Verbindung ist aktiv
 * `gelb` Verbindung getrennt (mit Knopf B)
 
