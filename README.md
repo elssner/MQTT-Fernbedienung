@@ -21,7 +21,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/](https://elssner.
   * `c` MQTT Verbindung
 
 #### LED `a` `b` `c` Farben
-* `weiß` Ereignis gestartet (Knopf loslssen)
+* `weiß` Ereignis gestartet (Knopf loslassen)
 * `grün` bei OK nach einem AT-Kommando
 * `rot` bei Fehler nach einem AT-Kommando
 * `orange` Warnung, warten
