@@ -110,7 +110,7 @@ Dabei werden teilweise zwei aufeinander folgende Gesten ausgewertet (erst links/
 ![](doc/DSC00693_1920.JPG)
 
 
-[![](DSC00483_512.JPG)](doc/MQTT-Fernbedienung-0-2-0.png)\
+[![](doc/MQTT-Fernbedienung-0-2-0_400.png)](doc/MQTT-Fernbedienung-0-2-0.png)\
 Zum Vergrößern auf das Bild klicken.
 
 ![](doc/MQTT-Fernbedienung-0-2-0.png)
