@@ -107,7 +107,7 @@ Nach dem Trennen nur `c gelb`.
 * Joystick Button schaltet das I²C Relais und das Licht am Modell.
 
 ### Gesten (Calliope neigen, kippen, drehen)
-* `a blau` bei Stop, `a aus` beim Neigen
+* `a blau` bei Stop, `a lila` beim Neigen
 * `a rot` bei MQTT Publish Fehler
 * wenn Logo nach unten
 * wenn Logo nach oben
