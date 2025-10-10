@@ -15,16 +15,6 @@ LED Status|`a`|`b`|`c`
 beim Verbinden|serielle Schnittstelle|WLAN Verbindung|MQTT Verbindung
 beim Fernsteuern|Gesten (Calliope neigen)|Joystick|MQTT Verbindung
 
-#### LED `a` `b` `c` Status
-* beim Verbinden
-  * `a` serielle Schnittstelle
-  * `b` WLAN Verbindung
-  * `c` MQTT Verbindung
-* beim Fernsteuern
-  * `a` Gesten (Calliope neigen, kippen, drehen)
-  * `b` Joystick
-  * `c` MQTT Verbindung
-
 #### LED `a` `b` `c` Farben
 * `weiß` Ereignis gestartet (Knopf loslassen)
 * `grün` bei OK nach einem AT-Kommando
