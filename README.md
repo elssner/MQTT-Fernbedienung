@@ -108,3 +108,5 @@ Modell fährt in die entsprechende Richtung. Die Tabelle zeigt alle möglichen R
 Dabei werden teilweise zwei aufeinander folgende Gesten ausgewertet (erst links/rechts neigen, dann vor/zurück oder nach unten drehen).
 
 ![](doc/DSC00693_1920.JPG)
+
+![](doc/MQTT-Fernbedienung-0-2-0.png)
