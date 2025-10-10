@@ -53,7 +53,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
             bt_speed = 384
             basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x7f00ff)
         } else {
-            basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0x000000)
+            mqtt_publish_stop_a_aus()
         }
     }
 })
@@ -67,7 +67,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.b), 0xff0000, serial.wifi_connect("TXT4.0-sWp6", "ozvTwHC7"), 0x00FF00)
     } else {
         mqtt_connected = false
-        basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), Colors.Off)
+        mqtt_publish_stop_a_aus()
         basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.b), Colors.Off)
         basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.c), 0xff0000, serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttclean), 2), 0xffff00)
     }
@@ -77,6 +77,11 @@ input.onGesture(Gesture.LogoDown, function () {
     g_status += 2
     mqtt_publish_bt("bt_fw" + richtung, bt_speed)
 })
+function mqtt_publish_stop_a_aus () {
+    i_payload += 1
+    basic.setLedColors2(basic.basicv3_rgbled(basic.eRGBLED.a), 0xff0000, serial.mqtt_publish("topic", serial.string_join(";", i_payload, "bt_stop", 0)), 0x000000)
+    lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
+}
 input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function () {
     if (!(lcd.get_display(lcd.eDisplay.none))) {
         if (serial.at_command(serial.serial_eAT(serial.eAT_commands.at_mqttconn), 5)) {
