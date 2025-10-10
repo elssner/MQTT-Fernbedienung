@@ -1,11 +1,21 @@
 input.onGesture(Gesture.TiltRight, function () {
     richtung = "_right"
-    mqtt_publish_bt("bt_right", bt_speed)
+    neigen()
 })
 input.onGesture(Gesture.LogoUp, function () {
+    g_status += 2
     mqtt_publish_bt("bt_bw" + richtung, bt_speed)
 })
+function neigen () {
+    if (g_status == 1) {
+        mqtt_publish_bt("bt" + richtung, bt_speed)
+    } else {
+        g_status += 1
+        mqtt_publish_bt("bt_stop", 0)
+    }
+}
 input.onGesture(Gesture.ScreenDown, function () {
+    g_status += 2
     mqtt_publish_bt("bt_turn" + richtung, bt_speed)
 })
 function mqtt_publish_joystick () {
@@ -49,7 +59,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 input.onGesture(Gesture.TiltLeft, function () {
     richtung = "_left"
-    mqtt_publish_bt("bt_left", bt_speed)
+    neigen()
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     if (!(mqtt_connected)) {
@@ -64,6 +74,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
 input.onGesture(Gesture.LogoDown, function () {
+    g_status += 2
     mqtt_publish_bt("bt_fw" + richtung, bt_speed)
 })
 input.onButtonEvent(Button.A, input.buttonEventValue(ButtonEvent.Hold), function () {
@@ -99,8 +110,11 @@ input.onButtonEvent(Button.B, input.buttonEventValue(ButtonEvent.Hold), function
     lcd.write_array(serial.get_response(), lcd.eINC.inc0, serial.get_response_index())
 })
 input.onGesture(Gesture.ScreenUp, function () {
-    richtung = ""
     mqtt_publish_bt("bt_stop", 0)
+    richtung = ""
+    if (g_status != 1) {
+        g_status = 0
+    }
 })
 function mqtt_publish_relay (on: string) {
     i_payload += 1
@@ -133,6 +147,7 @@ let joystick_lenken = 0
 let joystick_fahren = 0
 let last_joystick_button = ""
 let bt_speed = 0
+let g_status = 0
 let richtung = ""
 basic.setLedColors1(basic.basicv3_rgbled(basic.eRGBLED.a), 0xffffff)
 serial.init_serial()
