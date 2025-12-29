@@ -7,7 +7,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 > "3;j;0;255"\
 > "4;1"
 
-* Länge = 3 und [1][0-2] = "bt_"\
+* Länge = 3 und [1] beginnt mit "bt_"\
   *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
   * [0] Zähler
   * [1] button_id ("bt_..") = 11 Buttons\
@@ -19,12 +19,14 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
     * "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
     * sonst (stoppe 4 Motoren sync)
   * [2] speed (0 .. +512)
-* Länge = 4 und [1] = "m" (direkte Motor Werte vom Sender)
+* Länge = 4 und [1] = "m"\
+  *direkte Motor Werte vom Sender*
   * [0] Zähler
   * [1] = "m"
   * [2] = motor_links (-512 .. 0 .. +512)
   * [3] = motor_rechts (-512 .. 0 .. +512)
-* Länge = 4 und [1] = "j" (direkte Joystick Werte vom Sender)
+* Länge = 4 und [1] = "j"\
+  *direkte Joystick Werte vom Sender*
   * [0] Zähler
   * [1] = "j"
   * [2] = j_fahren (0 .. 128 .. 255)
