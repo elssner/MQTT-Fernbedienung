@@ -12,3 +12,13 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
   * [1] = "m"
   * [2] = motor_links
   * [3] = motor_rechts
+* Länge = 4 und [1] = "j"
+  * [0] Zähler
+  * [1] = "j"
+  * [2] = j_fahren
+  * [3] = j_lenken
+* Länge = 2
+  * [0] Zähler
+  * [1] "0" oder "1"
+
+
