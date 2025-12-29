@@ -45,5 +45,5 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
   * [0] Zähler
   * [1] "0" oder "1"
 
-> [0] Zähler zählt bei geänderten Daten weiter.\
+> [0] Zähler zählt nur bei geänderten Daten weiter.\
 > MQTT Daten werden dauerhaft (100 ms) gesendet und nur wenn [0] Zähler sich ändert, werden diese ausgewertet.
