@@ -3,8 +3,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 ## MQTT Protokoll
 > CSV: mit Semikolon getrennte Strings\
 > "1;bt_fw;512"\
-> "2;m,-512;512"\
-> "3;j;0;255"
+> "2;m;-512;512"\
+> "3;j;0;255"\
 > "4;1"
 
 * Länge = 3 (Buttons auf TXT 4.0 Touch Display oder Calliope neigen)
