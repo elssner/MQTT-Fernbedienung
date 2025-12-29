@@ -7,6 +7,14 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 > "3;j;0;255"\
 > "4;1"
 
+* Länge >= 3 und [1] = "q"\
+  *Qwiic Motoren über I²C steuern
+  * [0] Zähler
+  * [1] = "q"
+  * [2] = Qwiic Motor 0: (0 .. 128 .. 255)
+  * optional [3] = Qwiic Motor 1: (0 .. 128 .. 255)
+  * optional [4] = Qwiic Motor 2: (0 .. 128 .. 255)
+  * optional [5] = Qwiic Motor 3: (0 .. 128 .. 255)
 * Länge = 3 und [1] beginnt mit "bt_"\
   *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
   * [0] Zähler
