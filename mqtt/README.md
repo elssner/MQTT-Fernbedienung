@@ -18,7 +18,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 * Länge = 3 und [1] beginnt mit "bt_"\
   *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
   * [0] Zähler
-  * [1] button_id ("bt_..") = 11 Buttons\
+  * [1] button_id ("bt_..") = 11 Buttons bzw. Gesten\
     *Omniwheels 8 Richtungen gerade, 2 drehen auf der Stelle, Stop*
     * "bt_0", "bt_stop" (stoppe 4 Motoren sync)
     * "bt_fw", "bt_bw" (vorwärts, rückwaärts)
