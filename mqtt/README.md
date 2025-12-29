@@ -3,10 +3,15 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 ## MQTT Protokoll
 > CSV: mit Semikolon getrennte Strings
 
-* Länge = 3 (Buttons auf TXT 4.0 Touch Display)
+* Länge = 3 (Buttons auf TXT 4.0 Touch Display oder Calliope neigen)
   * [0] Zähler
   * [1] button_id ("bt_..")
     * "bt_0", "bt_stop" (stoppe 4 Motoren sync)
+    * "bt_fw", "bt_bw" (vorwärts, rückwaärts)
+    * "bt_left", "bt_right" (gerade nach links, rechts)
+    * "bt_fw_left", "bt_fw_right", "bt_bw_left", "bt_bw_right"
+    * "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
+    * sonst (stoppe 4 Motoren sync)
   * [2] speed (0 .. +512)
 * Länge = 4 und [1] = "m" (direkte Motor Werte vom Sender)
   * [0] Zähler
