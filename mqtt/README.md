@@ -7,6 +7,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 > "3;j;0;255"\
 > "4;1"
 
+> AT+MQTTPUB=0,"topic","3;j;128;128",1,0
+
 * Länge >= 3 und [1] = "q"\
   *Motoren über I²C steuern* [SparkFun Qwiic Motor Driver](https://www.sparkfun.com/products/15451)
   * [0] Zähler
