@@ -7,7 +7,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 > "3;j;0;255"\
 > "4;1"
 
-* Länge = 3 (Buttons auf TXT 4.0 Touch Display oder Calliope neigen)
+* Länge = 3 und [1][0-2] = "bt_"\
+  *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
   * [0] Zähler
   * [1] button_id ("bt_..") = 11 Buttons\
     *Omniwheels 8 Richtungen gerade, 2 drehen auf der Stelle, Stop*
