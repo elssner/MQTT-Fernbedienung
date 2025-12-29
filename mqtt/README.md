@@ -8,7 +8,7 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 > "4;1"
 
 * Länge >= 3 und [1] = "q"\
-  *Qwiic Motoren über I²C steuern
+  *Qwiic Motoren über I²C steuern*
   * [0] Zähler
   * [1] = "q"
   * [2] = Qwiic Motor 0: (0 .. 128 .. 255)
