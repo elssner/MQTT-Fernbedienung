@@ -54,7 +54,7 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
     * sonst (stoppe 4 Motoren sync)
   * [2] speed (0 .. +512)
 * sonst\
-  *payload {} ungültig anzeigen und alle Motoren stoppen
+  *alle Motoren stoppen und "payload {} ungültig" anzeigen*
 
 > [0] Zähler zählt nur bei geänderten Daten weiter.\
 > MQTT Daten werden dauerhaft (100 ms) gesendet und nur wenn [0] Zähler sich ändert, werden diese ausgewertet.
