@@ -54,13 +54,13 @@ Folgende Daten-Strings werden vom Modell **MQTT Gabelstapler** verstanden:
   * [1] = "r"
   * [2} = "1" schaltet Relais an, alles andere schaltet aus
 * Länge = 4 und [1] = "m"\
-  *direkte Motor Werte vom Sender (Motoren vorn und hinten sind synchronisiert)*
+  *direkte Motor Geschwindigkeit Werte vom Sender (Motoren vorn und hinten sind synchronisiert)*
   * [0] Zähler
   * [1] = "m"
   * [2] = motor_links (-512 .. 0 .. +512)
   * [3] = motor_rechts (-512 .. 0 .. +512)
 * Länge = 4 und [1] = "j"\
-  *direkte Joystick Werte vom Sender (Raupensteuerung beim Empfänger)*
+  *direkte Joystick x/y Werte vom Sender (Raupensteuerung beim Empfänger)*
   * [0] Zähler
   * [1] = "j"
   * [2] = j_fahren (0 .. 128 .. 255)
