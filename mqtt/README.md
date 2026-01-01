@@ -1,4 +1,4 @@
-Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://elssner.github.io/MQTT-Fernbedienung/mqtt/) öffnen
+Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://elssner.github.io/MQTT-Fernbedienung/mqtt/) öffnen.
 
 MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfänger.
 
