@@ -23,19 +23,17 @@ Bei der Joystick Steuerung werden zwei Geschwindigkeiten für links und rechts �
 
 ### MQTT Protokoll
 
-Calliope sendet an das WLAN Modul seriell (RX/TX) AT Kommandos wie bei einem Modem. Die MQTT AT Kommandos existieren nur auf dem Cytron Modul. 
+Calliope sendet an das WLAN Modul seriell (RX/TX) AT Kommandos wie bei einem Modem.\
+Die MQTT AT Kommandos existieren nur auf dem Cytron Modul. 
 > `AT+MQTTPUB=0,"topic","3;j;128;128",1,0`
 
-Der Daten String `"3;j;128;128"` ist mit Semikolon CSV kodiert (weil Kommas im AT Kommando verwendet werden).\
+Der Daten-String `"3;j;128;128"` ist mit Semikolon CSV kodiert.\
 Beispiele: `1;stop` `2;q;128` `3;r;1` `4;m;-512;512` `5;j;0;255` `6;bt_fw;512`
 
+Der MQTT Subscriber (TXT 4.0 Python Code) teilt den Daten-String in eine Liste von Strings. Das erste Element ist eine laufende Nummer. Jede Nummer wird nur einmal verarbeitet.
+Nur bei Änderung des Zähles wird eine Aktion bei den Motoren (und Relais) ausgelöst.
 
-> CSV: mit Semikolon getrennte Strings\
-> "1;bt_fw;512"\
-> "2;m;-512;512"\
-> "3;j;0;255"\
-> "4;1"
-
+Folgende Daten-Strings werden vom **MQTT Gabelstapler** verstanden:
 
 * Länge >= 2 und [1] = "stop"\
   *Encodermotoren und I²C Qwiic Motoren stoppen* 
@@ -82,5 +80,3 @@ Beispiele: `1;stop` `2;q;128` `3;r;1` `4;m;-512;512` `5;j;0;255` `6;bt_fw;512`
 * sonst\
   *alle Motoren stoppen und "payload {} ungültig" anzeigen*
 
-> [0] Zähler zählt nur bei geänderten Daten weiter.\
-> MQTT Daten werden dauerhaft (100 ms) gesendet und nur wenn [0] Zähler sich ändert, werden diese ausgewertet.
