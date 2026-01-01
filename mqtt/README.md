@@ -23,7 +23,7 @@ Bei der Joystick Steuerung werden zwei Geschwindigkeiten fÃ¼r links und rechts Ã
 
 ### MQTT Protokoll
 
-Calliope sendet an das WLAN Modul seriell (RX/TX) Daten. Wie bei einem Modem gibt es AT Kommandos. Die MQTT AT Kommandos existieren nur auf dem Cytron Modul. 
+Calliope sendet an das WLAN Modul seriell (RX/TX) AT Kommandos wie bei einem Modem. Die MQTT AT Kommandos existieren nur auf dem Cytron Modul. 
 > `AT+MQTTPUB=0,"topic","3;j;128;128",1,0`
 
 Der Daten String `"3;j;128;128"` ist mit Semikolon CSV kodiert (weil Kommas im AT Kommando verwendet werden).\
