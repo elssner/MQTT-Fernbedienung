@@ -2,7 +2,8 @@ Diese Seite bei [https://elssner.github.io/MQTT-Fernbedienung/mqtt/](https://els
 
 * fischertechnik ROBO Pro Coding Projekt: [MQTT_Gabelstapler](https://git.fischertechnik-cloud.com/calliope/MQTT_Gabelstapler)
 
-MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfänger.
+MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfänger. Der TXT 4.0 Controller auf dem Modell ist WLAN Access Point und mit Python wird im Linux eine eigene mosquitto Instanz an Port 1884 gestartet.
+Mit diesem MQTT Broker verbindet sich lokal das ROBO Pro Coding Projekt als MQTT Subscriber. 
 
 ## MQTT Protokoll
 > CSV: mit Semikolon getrennte Strings\
