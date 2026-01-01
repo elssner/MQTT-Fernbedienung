@@ -28,18 +28,6 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
   * [0] Zähler
   * [1] = "r"
   * [2} = "1" schaltet Relais an, alles andere schaltet aus
-* Länge = 3 und [1] beginnt mit "bt_"\
-  *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
-  * [0] Zähler
-  * [1] button_id ("bt_..") = 11 Buttons bzw. Gesten\
-    *Omniwheels 8 Richtungen gerade, 2 drehen auf der Stelle, Stop*
-    * "bt_0", "bt_stop" (stoppe 4 Motoren sync)
-    * "bt_fw", "bt_bw" (vorwärts, rückwaärts)
-    * "bt_left", "bt_right" (gerade nach links, rechts)
-    * "bt_fw_left", "bt_fw_right", "bt_bw_left", "bt_bw_right"
-    * "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
-    * sonst (stoppe 4 Motoren sync)
-  * [2] speed (0 .. +512)
 * Länge = 4 und [1] = "m"\
   *direkte Motor Werte vom Sender*
   * [0] Zähler
@@ -52,9 +40,20 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
   * [1] = "j"
   * [2] = j_fahren (0 .. 128 .. 255)
   * [3] = j_lenken (0 .. 128 .. 255)
-* Länge = 2 (Relais schalten)
+* Länge = 3\
+  *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
   * [0] Zähler
-  * [1] "0" oder "1"
+  * [1] button_id ("bt_..") = 11 Buttons bzw. Gesten\
+    *Omniwheels 8 Richtungen gerade, 2 drehen auf der Stelle, Stop*
+    * "bt_0", "bt_stop" (stoppe 4 Motoren sync)
+    * "bt_fw", "bt_bw" (vorwärts, rückwaärts)
+    * "bt_left", "bt_right" (gerade nach links, rechts)
+    * "bt_fw_left", "bt_fw_right", "bt_bw_left", "bt_bw_right"
+    * "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
+    * sonst (stoppe 4 Motoren sync)
+  * [2] speed (0 .. +512)
+* sonst\
+  *"payload {} ungültig" anzeigen und alle Motoren stoppen
 
 > [0] Zähler zählt nur bei geänderten Daten weiter.\
 > MQTT Daten werden dauerhaft (100 ms) gesendet und nur wenn [0] Zähler sich ändert, werden diese ausgewertet.
