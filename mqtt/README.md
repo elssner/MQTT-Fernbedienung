@@ -49,8 +49,8 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
     * "bt_0", "bt_stop" (stoppe 4 Motoren sync)
     * "bt_fw", "bt_bw" (vorwärts, rückwaärts)
     * "bt_left", "bt_right" (gerade nach links, rechts)
-    * "bt_fw_left", "bt_fw_right", "bt_bw_left", "bt_bw_right"
-    * "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
+    * ↖ ↗ ↙ ↘ "bt_fw_left", "bt_fw_right", "bt_bw_left", "bt_bw_right"
+    * ↶ ↷ "bt_turn_left", "bt_turn_right" (auf der Stelle drehen)
     * sonst (stoppe 4 Motoren sync)
   * [2] speed (0 .. +512)
 * sonst\
