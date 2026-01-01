@@ -25,6 +25,7 @@ Bei der Joystick Steuerung werden zwei Geschwindigkeiten fÃ¼r links und rechts Ã
 
 Calliope sendet an das WLAN Modul seriell (RX/TX) Daten. Wie bei einem Modem gibt es AT Befehle. Die MQTT AT Befehle existieren nur auf dem Cytron Modul. 
 > `AT+MQTTPUB=0,"topic","3;j;128;128",1,0`
+Der Daten String `"3;j;128;128"` ist mit Semikolon CSV kodiert (weil Kommas im AT Befehl verwendet werden). 
 
 > CSV: mit Semikolon getrennte Strings\
 > "1;bt_fw;512"\
