@@ -8,7 +8,8 @@ Der TXT 4.0 Controller auf dem Modell ist nur Subscriber und sendet keine Daten.
 
 ### Sender
 
-Als Sender ist ein zweiter TXT 4.0 Controller geeignet: []()
+Als Sender ist ein zweiter TXT 4.0 Controller geeignet: [MQTT_Fernbedienung_Joystick](https://git.fischertechnik-cloud.com/calliope/MQTT_Fernbedienung_Joystick)
+
 
 
 
