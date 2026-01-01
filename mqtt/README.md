@@ -67,7 +67,7 @@ Folgende Daten-Strings werden vom Modell **MQTT Gabelstapler** verstanden:
   * [3] = j_lenken (0 .. 128 .. 255)
 * Länge = 3\
   *Omniwheels mit Calliope Gestensensor steuern*\
-  *oder mit Buttons auf TXT 4.0 Touch Display*
+  *oder mit Buttons auf dem TXT 4.0 Touch Display*
   * [0] Zähler
   * [1] button_id ("bt_..") = 11 Buttons bzw. Gesten\
     *Omniwheels 8 Richtungen gerade, 2 drehen auf der Stelle, Stop*
