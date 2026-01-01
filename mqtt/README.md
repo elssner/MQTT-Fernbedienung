@@ -30,8 +30,8 @@ Die MQTT AT Kommandos existieren nur auf dem Cytron Modul.
 Der Daten-String `"3;j;128;128"` ist mit Semikolon CSV kodiert.\
 Beispiele: `1;stop` `2;q;128` `3;r;1` `4;m;-512;512` `5;j;0;255` `6;bt_fw;512`
 
-Der MQTT Subscriber (TXT 4.0 Python Code Blöcke) teilt den Daten-String in eine Liste von Strings. `['3', 'j', '128', '128']`
-Das erste Element ist eine laufende Nummer. Jede Nummer wird nur einmal verarbeitet.
+Der MQTT Subscriber (TXT 4.0 Python Code Blöcke) teilt den Daten-String in eine Liste von Strings.\
+`['3', 'j', '128', '128']` Das erste Element ist eine laufende Nummer. Jede Nummer wird nur einmal verarbeitet.
 Nur bei Änderung des Zähles wird eine Aktion bei den Motoren (und Relais) ausgelöst.
 
 Folgende Daten-Strings werden vom Modell **MQTT Gabelstapler** verstanden:
