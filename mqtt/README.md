@@ -13,6 +13,8 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
 
 * Länge >= 2 und [1] = "stop"\
   *Encodermotoren und I²C Qwiic Motoren stoppen* 
+  * [0] Zähler
+  * [1] = "stop"
 * Länge >= 3 und [1] = "q"\
   *Motoren über I²C steuern* [SparkFun Qwiic Motor Driver](https://www.sparkfun.com/products/15451)
   * [0] Zähler
