@@ -21,9 +21,10 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
   * optional [3] = Qwiic Motor B: (0 .. 128 .. 255)
   * optional [4] = Qwiic Motor C: (0 .. 128 .. 255)
   * optional [5] = Qwiic Motor D: (0 .. 128 .. 255)
-
 * Länge >= 3 und [1] = "r"\
   *I²C Qwiic Relay schalten*
+  * [0] Zähler
+  * [1] = "r"
   * [2} = "1" schaltet Relais an, alles andere schaltet aus
 * Länge = 3 und [1] beginnt mit "bt_"\
   *Buttons auf TXT 4.0 Touch Display oder Calliope neigen*
