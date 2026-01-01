@@ -12,7 +12,7 @@ Als MQTT Publisher ist ein **zweiter TXT 4.0 Controller** geeignet:
 * fischertechnik ROBO Pro Coding Projekt: [MQTT_Fernbedienung_Joystick](https://git.fischertechnik-cloud.com/calliope/MQTT_Fernbedienung_Joystick)
 
 **Calliope** kann mit [Cytron WLAN Modul](../doc) ebenfalls als MQTT Publisher den Daten String an den TXT 4.0 Controller senden. 
-* [MakeCode](https://makecode.calliope.cc/) Projekt: [MQTT-Fernbedienung-Gabelstapler](https://github.com/elssner/MQTT-Fernbedienung-Gabelstapler)
+* [MakeCode](https://makecode.calliope.cc/) Projekt Calliope v3: [MQTT-Fernbedienung-Gabelstapler](https://github.com/elssner/MQTT-Fernbedienung-Gabelstapler)
 
 Für die Steuerung von Omniwheels in alle Richtungen bietet sich der auf dem Calliope integrierte Gestensensor an.
 Nur durch Neigen des Calliope kann das Modell ferngesteuert werden. Allerdings ist Kurven fahren schwierig, wenn alle Motoren mit der gleichen Geschwindigkeit synchronisiert sind (und sich nur in verschiedene Richtungen oder gar nicht drehen).
