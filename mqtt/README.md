@@ -8,6 +8,9 @@ Der TXT 4.0 Controller auf dem Modell ist nur Subscriber und sendet keine Daten.
 
 ### Sender
 
+Als Sender ist ein zweiter TXT 4.0 Controller geeignet: []()
+
+
 
 
 ## MQTT Protokoll
