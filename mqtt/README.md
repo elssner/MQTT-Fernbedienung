@@ -8,9 +8,10 @@ Der TXT 4.0 Controller auf dem Modell ist nur Subscriber und sendet keine Daten.
 
 ### Sender
 
-Als MQTT Publisher ist ein zweiter TXT 4.0 Controller geeignet: [MQTT_Fernbedienung_Joystick](https://git.fischertechnik-cloud.com/calliope/MQTT_Fernbedienung_Joystick)
+Als MQTT Publisher ist ein zweiter TXT 4.0 Controller geeignet:
+* fischertechnik ROBO Pro Coding Projekt: [MQTT_Fernbedienung_Joystick](https://git.fischertechnik-cloud.com/calliope/MQTT_Fernbedienung_Joystick)
 
-Calliope kann mit WLAN Modul [Cytron](../doc) ebenfalls als MQTT Publisher den Daten String an den TXT 4.0 Controller senden. Für die Steuerung von Omniwheels in alle Richtungen bietet sich der auf dem Calliope integrierte Gestensensor an.
+Calliope kann mit [Cytron WLAN Modul](../doc) ebenfalls als MQTT Publisher den Daten String an den TXT 4.0 Controller senden. Für die Steuerung von Omniwheels in alle Richtungen bietet sich der auf dem Calliope integrierte Gestensensor an.
 
 
 
