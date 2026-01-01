@@ -18,18 +18,20 @@ Für die Steuerung von Omniwheels in alle Richtungen bietet sich der auf dem Cal
 Nur durch Neigen des Calliope kann das Modell ferngesteuert werden. Allerdings ist Kurven fahren schwierig, wenn alle Motoren mit der gleichen Geschwindigkeit synchronisiert sind (und sich nur in verschiedene Richtungen oder gar nicht drehen).
 
 Ein I²C Joystick lässt sich auch einfach an Calliope stecken. Zum Fahren und Lenken ohne Servo bietet sich die Raupensteuerung an. Dazu werden die Räder vorn und hinten synchronisiert (wie bei einer Kette). 
-Bei der Joystick Steuerung werden also zwei Geschwindigkeiten für links und rechts übertragen.
+Bei der Joystick Steuerung werden zwei Geschwindigkeiten für links und rechts übertragen.
 
 
+### MQTT Protokoll
 
-## MQTT Protokoll
+Calliope sendet an das WLAN Modul seriell (RX/TX) Daten. Wie bei einem Modem gibt es AT Befehle. Die MQTT AT Befehle existieren nur auf dem Cytron Modul. 
+> AT+MQTTPUB=0,"topic","3;j;128;128",1,0
+
 > CSV: mit Semikolon getrennte Strings\
 > "1;bt_fw;512"\
 > "2;m;-512;512"\
 > "3;j;0;255"\
 > "4;1"
 
-> AT+MQTTPUB=0,"topic","3;j;128;128",1,0
 
 * Länge >= 2 und [1] = "stop"\
   *Encodermotoren und I²C Qwiic Motoren stoppen* 
