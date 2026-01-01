@@ -24,7 +24,7 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
   * optional [4] = Qwiic Motor C: (0 .. 128 .. 255)
   * optional [5] = Qwiic Motor D: (0 .. 128 .. 255)
 * Länge >= 3 und [1] = "r"\
-  *I²C Qwiic Relay schalten*
+  *Licht mit I²C Relais schalten* [SparkFun Qwiic Single Relay](https://www.sparkfun.com/products/15093)
   * [0] Zähler
   * [1] = "r"
   * [2} = "1" schaltet Relais an, alles andere schaltet aus
