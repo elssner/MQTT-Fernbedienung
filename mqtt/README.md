@@ -6,13 +6,16 @@ MQTT erfordert eine WLAN Verbindung mit IP Adressen zwischen Sender und Empfäng
 Mit diesem MQTT Broker verbindet sich lokal das ROBO Pro Coding Projekt als MQTT Subscriber. Als Daten existiert nur ein einziger String, der in der dauerhaft Schleife ständig abgefragt wird, ob er sich geändert hat.
 Der TXT 4.0 Controller auf dem Modell ist nur Subscriber und sendet keine Daten.
 
-### Sender
+### Fernbedienung Sender
 
 Als MQTT Publisher ist ein zweiter TXT 4.0 Controller geeignet:
 * fischertechnik ROBO Pro Coding Projekt: [MQTT_Fernbedienung_Joystick](https://git.fischertechnik-cloud.com/calliope/MQTT_Fernbedienung_Joystick)
 
 Calliope kann mit [Cytron WLAN Modul](../doc) ebenfalls als MQTT Publisher den Daten String an den TXT 4.0 Controller senden. Für die Steuerung von Omniwheels in alle Richtungen bietet sich der auf dem Calliope integrierte Gestensensor an.
+Nur durch Neigen des Calliope kann das Modell schon ferngesteuert werden. Allerdings ist Kurven fahren schwierig, wenn alle Motoren mit der gleichen Geschwindigkeit synchronisiert sind (und sich nur in verschiedene Richtungen oder gar nicht drehen).
 
+Ein I²C Joystick lässt sich auch einfach an Calliope stecken. Zum Fahren und Lenken ohne Servo bietet sich die Raupensteuerung an. Dazu werden die Räder vorn und hinten synchronisiert (wie bei einer Kette). 
+Bei der Joystick Steuerung werden also nur zwei Geschwindigkeiten für links und rechts übertragen.
 
 
 
